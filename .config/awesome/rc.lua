@@ -67,7 +67,7 @@ revelation.init()
 -- common
 modkey     = "Mod4"
 altkey     = "Mod1"
-terminal   = "st" or "termite" or "lilyterm" or "roxterm" or "xterm"
+terminal   = "roxterm" or "xterm"
 editor     = os.getenv("EDITOR") or "vim" or "emacs" or "nano" or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -603,7 +603,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n",      awful.client.restore),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal .. " -e tmux") end),
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
 
